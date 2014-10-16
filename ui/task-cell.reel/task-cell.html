@@ -23,6 +23,60 @@
                 "checked": {"<->": "@owner.task.completed"}
             }
         },
+        "flow": {
+            "prototype": "montage/ui/flow.reel",
+            "properties": {
+                "element": {"#": "flow"},
+                "cameraPosition": [
+                    0,
+                    0,
+                    1500
+                ],
+                "paths": [
+                    {
+                        "knots": [
+                            {
+                                "knotPosition": [
+                                    -2400,
+                                    0,
+                                    -1
+                                ],
+                                "nextHandlerPosition": [
+                                    -800,
+                                    0,
+                                    -1
+                                ],
+                                "previousDensity": 10,
+                                "nextDensity": 10
+                            },
+                            {
+                                "knotPosition": [
+                                    2400,
+                                    0,
+                                    -1
+                                ],
+                                "previousHandlerPosition": [
+                                    800,
+                                    0,
+                                    -1
+                                ],
+                                "previousDensity": 10,
+                                "nextDensity": 10
+                            }
+                        ],
+                        "headOffset": 0,
+                        "tailOffset": 0,
+                        "units": {}
+                    }
+                ]
+            }
+        },
+        "image": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "crossOrigin": null
+            }
+        },
         "textField": {
             "prototype": "digit/ui/text-field.reel",
             "properties": {
@@ -38,8 +92,12 @@
 </head>
 <body>
     <div data-montage-id="owner" class="TaskCell">
+        <img data-montage-id="image">
         <input type="checkbox" data-montage-id="checkbox">
         <input data-montage-id="textField" type="text">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
+            <div></div>
+        </div>
     </div>
 </body>
 </html>
